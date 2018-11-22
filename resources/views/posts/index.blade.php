@@ -8,7 +8,7 @@
 
   <div>
     @foreach ($posts as $post)
-      <p>{{ $post->body }} - {{ $post->user->name}} ({{ $post->updated_at }})</p>
+      <p>{{ $post->body }} <em>- {{ $post->user->name}}</em> <small>({{ $post->updated_at }})</small></p>
     @endforeach
   </div>
 @endsection
