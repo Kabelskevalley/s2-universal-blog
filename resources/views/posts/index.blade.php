@@ -8,7 +8,9 @@
 
   <div>
     @foreach ($posts as $post)
-      <p>{{ $post->body }} <em>- {{ $post->user->name}}</em> <small>({{ $post->updated_at }})</small></p>
+      <a href="{{ action('PostController@show', ['id' => $post->id]) }}">
+        <p>{{ $post->body }} <em>- {{ $post->user->name}}</em> <small>({{ $post->updated_at }})</small></p>
+      </a>
     @endforeach
   </div>
 @endsection
