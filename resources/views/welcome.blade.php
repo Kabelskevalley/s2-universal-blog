@@ -1,11 +1,32 @@
-@extends('layout')
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@section('title', 'SR des GCG')
+        <title>@yield('title')</title>
 
-@section('content')
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    </head>
+    <body>
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
 
-  <h1>SR des GCG</h1>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
 
-  <a href="posts">News</a>
-
-@endsection
+            <div class="content">
+                @yield('content')
+            </div>
+        </div>
+    </body>
+</html>
