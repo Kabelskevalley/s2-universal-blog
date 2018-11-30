@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('title', 'Post Bearbeiten')
 
@@ -16,7 +16,7 @@
       <textarea id="post_body" name="body" placeholder="Ein neuer Post" required>{{ $post->body }}</textarea>
     </div>
 
-    @include('errors')
+    @include('layouts.errors')
 
     <div class="form-group">
       <button type="submit" class="btn">Update Post</button>

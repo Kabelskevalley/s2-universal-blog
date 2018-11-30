@@ -18,7 +18,7 @@
       <button type="submit">Create Post</button>
     </div>
 
-    @include('errors')
+    @include('layouts.errors')
 
   </form>
 @endsection
