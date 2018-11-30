@@ -20,7 +20,6 @@
         <style>
             body{
                 background: #D2E0E6;
-
             }
             h1{
                 color: green;
@@ -30,9 +29,8 @@
             }
             div.dropdown{
                 text-align: right;
-                margin-right: 455px;
+                margin-right: 460px;
             }
-
         </style>
     </head>
     <body>
@@ -234,13 +232,15 @@
                                     <option> Lehrer zuerst</option>
                                     <option>Schülerrat zuerst</option>
                                 </select></a>
-                            <a class="dropdown-item" href="#"><a href="#" class="list-group-item list-group-item-action list-group-item-primary" class="btn btn-outline-secondary"><input type="submit" value="Speichern" name="Speichern" /></a></a>
-                        </a>
+                            <a class="dropdown-item" href="#">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-primary" class="btn btn-outline-secondary">
+                                    <input type="submit" value="Speichern" name="Speichern" />
+                                </a>
+                            </a>
                     </div>
                 </div>
             </div> 
         </div>
-    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
