@@ -6,6 +6,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use App\Post;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -30,5 +32,9 @@ class User extends Authenticatable
 
     public function posts() {
         return $this->hasMany(Post::class);
+    }
+
+    public function owns(Post $post) {
+      return $this->id == $post->user_id;
     }
 }
