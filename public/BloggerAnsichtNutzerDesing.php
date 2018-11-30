@@ -19,6 +19,7 @@
         <style>
             body{
                 background: #D2E0E6;
+                margin-top: 25px;
             }
             h1{
                 color: green;
@@ -28,7 +29,7 @@
             }
             div.dropdown{
                 text-align: right;
-                margin-right: 460px;
+                margin-right: 456px;
             }
         </style>
     </head>
@@ -62,7 +63,7 @@
                         </div>
                     </form>
                 </div><br>
-                </form><br>
+                <br>
                 <div class="alert alert-success" style="max-width: 70rem;" role="alert">
                     <button type="button" class="btn btn-outline-warning" style="float:right;"><img src="https://zlb.uni-due.de/wiki/images/1/1a/Stern.png" width="23" alt="Favorit"></button>
                     <h4 class="alert-heading">Essen</h4>

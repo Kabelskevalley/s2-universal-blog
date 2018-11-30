@@ -20,6 +20,7 @@
         <style>
             body{
                 background: #D2E0E6;
+                margin-top: 25px;
             }
             h1{
                 color: green;
@@ -29,7 +30,7 @@
             }
             div.dropdown{
                 text-align: right;
-                margin-right: 460px;
+                margin-right: 456px;
             }
         </style>
     </head>
