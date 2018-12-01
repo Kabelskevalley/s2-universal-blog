@@ -1,5 +1,5 @@
 <div class="container-fluid alert alert-secondary">
-  <p>{{ $slot }}</p>
+  <p>{!! nl2br(e($slot)) !!}</p>
   <hr>
   <div class="row">
       <span class="col-md-2 col-sm-12">{{ $post->user->name }}</span>
