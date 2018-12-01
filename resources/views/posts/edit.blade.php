@@ -3,34 +3,31 @@
 @section('title', 'Post Bearbeiten')
 
 @section('content')
+  <div class="container-fluid">
 
-  <h1 class="title">Post Bearbeiten</h1>
+    <form method="POST" action="{{ action('PostController@update', ['id' => $post->id]) }}">
+      @method('PATCH')
+      @csrf
+      <div class="row align-items-end">
+        <div class="form-group col-md col-sm-12">
+          <textarea class="form-control" name="body" placeholder="News am GCG" aria-label="neuer Post" required>{{ $post->body }}</textarea>
+        </div>
+        <div class="form-group col-auto">
+          <button class="btn btn-primary float-right" type="submit">Änderung speichern</button>
+        </div>
 
-  <form method="POST" action="{{ action('PostController@update', ['id' => $post->id]) }}">
+      </div>
+      @include('layouts.errors')
+    </form>
 
-    @method('PATCH')
-    @csrf
-
-    <div class="form-group">
-      <label for="post_body">Post Inhalt:</label>
-      <textarea id="post_body" name="body" placeholder="Ein neuer Post" required>{{ $post->body }}</textarea>
+    <div class="row">
+      <div class="col-md-6 col-sm-12 text-info">
+        Erstellt am: <i>{{ $post->created_at }}</i>
+      </div>
+      <div class="col-md-6 col-sm-12 text-info">
+        Letzte Änderung am: <i>{{ $post->updated_at }}</i>
+      </div>
     </div>
 
-    @include('layouts.errors')
-
-    <div class="form-group">
-      <button type="submit" class="btn">Update Post</button>
-    </div>
-
-  </form>
-
-  <form method="POST" action="{{ action('PostController@destroy', ['id' => $post->id]) }}">
-
-    @method('DELETE')
-    @csrf
-
-    <div class="form-group">
-      <button type="submit" class="btn">Delete Post</button>
-    </div>
-  </form>
+  </div>
 @endsection

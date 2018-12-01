@@ -3,9 +3,8 @@
   <p>{{ $slot }}</p>
   <hr>
   <div class="row">
-    <div class="col">
-      <span class="mb-0">{{ $post->user->name }} <i>{{ $post->updated_at }}</i></span>
-    </div>
+      <span class="col-md-2 col-sm-12">{{ $post->user->name }}</span>
+      <span class="col text-info">Letzte Änderung am: <i>{{ $post->updated_at }}</i></span>
     @if (Auth::id() == $post->user->id)
       <div class="col-auto">
         <form method="POST" action="{{ action('PostController@destroy', ['id' => $post->id]) }}">
