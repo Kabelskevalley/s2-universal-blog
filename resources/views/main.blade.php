@@ -25,5 +25,5 @@
         {{ $post->body }}
       @endcomponent
     @endforeach
-    
+
   @endsection

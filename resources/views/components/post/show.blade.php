@@ -1,5 +1,4 @@
 <div class="container-fluid alert alert-secondary">
-  <h4 class="alert-heading">Nachricht</h4>
   <p>{{ $slot }}</p>
   <hr>
   <div class="row">
