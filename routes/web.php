@@ -26,4 +26,6 @@ Route::post('posts', 'PostController@store');
 Route::patch('posts/{post}', 'PostController@update');
 Route::delete('posts/{post}', 'PostController@destroy');
 
+Route::get('users/{user}', 'UserController@show');
+
 //Route::get('user/{id}', 'PostController@index');

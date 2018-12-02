@@ -7,7 +7,9 @@
     </div>
   </div>
   <div class="row">
-      <span class="col-md-2 col-sm-12">{{ $post->user->name }}</span>
+      <span class="col-md-3 col-sm-12">
+        <a href="{{ action('UserController@show', ['id' => $post->user->id])}}">{{ $post->user->name }}</a>
+      </span>
       <span class="col text-info">Letzte Änderung am: <i>{{ $post->updated_at }}</i></span>
     @if (Auth::id() == $post->user->id)
       <div class="col-auto">
