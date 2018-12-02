@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', str_limit($post->body, $limit=20, $end='...'))
+@section('title', explode("\n", $post->body)[0])
 
 @section('content')
 
