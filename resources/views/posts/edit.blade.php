@@ -4,7 +4,11 @@
 
 @section('content')
   <div class="container-fluid">
-
+    @if (session('status'))
+      <div class="alert alert-success">
+        {{ session('status') }}
+      </div>
+    @endif
     <form method="POST" action="{{ action('PostController@update', ['id' => $post->id]) }}">
       @method('PATCH')
       @csrf

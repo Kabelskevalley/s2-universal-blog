@@ -73,7 +73,7 @@ class PostController extends Controller
 
         $post->update(request(['body']));
 
-        return redirect('/');
+        return back()->with('status', 'Post aktualisiert!');
     }
 
     /**
@@ -87,6 +87,6 @@ class PostController extends Controller
         abort_unless(auth()->user()->owns($post), 403);
         $post->delete();
 
-        return redirect('/');
+        return back();
     }
 }
