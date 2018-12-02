@@ -11,28 +11,7 @@ class PostController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['index', 'show']);
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-      $posts = Post::where('user_id', auth()->id())->orderBy('updated_at', 'desc')->get();
-      return view('posts.index', compact('posts'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-      return view('posts.create');
+        $this->middleware('auth')->except(['show']);
     }
 
     /**

@@ -23,7 +23,7 @@
     @component('components.post.show')
       @slot('post', $post)
         {{ $post->body }}
-      @endcomponent
-    @endforeach
+    @endcomponent
+  @endforeach
 
   @endsection

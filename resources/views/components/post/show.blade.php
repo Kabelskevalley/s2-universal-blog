@@ -1,6 +1,11 @@
 <div class="container-fluid alert alert-secondary">
   <p>{!! nl2br(e($slot)) !!}</p>
   <hr>
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <a href="{{ action('PostController@show', ['id' => $post->id])}}">anzeigen</a>
+    </div>
+  </div>
   <div class="row">
       <span class="col-md-2 col-sm-12">{{ $post->user->name }}</span>
       <span class="col text-info">Letzte Änderung am: <i>{{ $post->updated_at }}</i></span>

@@ -1,13 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Post Bearbeiten')
+@section('title', str_limit($post->body, $limit=20, $end='...'))
 
 @section('content')
 
-  <h1 class="title">Post Anzeigen</h1>
-
-  <p>{{ $post->body }}</p>
-
-  <a href="{{ action('PostController@edit', ['id' => $post->id]) }}">Edit</a>
+  @component('components.post.show')
+    @slot('post', $post)
+      {{ $post->body }}
+  @endcomponent
 
 @endsection

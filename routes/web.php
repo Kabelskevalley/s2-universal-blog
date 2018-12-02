@@ -20,6 +20,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('posts', 'PostController');
+Route::get('posts/{post}', 'PostController@show');
+Route::get('posts/{post}/edit', 'PostController@edit');
+Route::post('posts', 'PostController@store');
+Route::patch('posts/{post}', 'PostController@update');
+Route::delete('posts/{post}', 'PostController@destroy');
 
 //Route::get('user/{id}', 'PostController@index');
