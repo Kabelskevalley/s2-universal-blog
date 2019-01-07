@@ -13,7 +13,6 @@
           <div class="form-group col-auto">
             <button class="btn btn-primary float-right" type="submit">Post erstellen</button>
           </div>
-
         </div>
         @include('layouts.errors')
       </form>

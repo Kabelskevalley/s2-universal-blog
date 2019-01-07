@@ -1,5 +1,6 @@
-<div class="container-fluid alert alert-secondary">
-  <p>{!! nl2br(e($slot)) !!}</p>
+<div class="container-fluid card my-2">
+  <div class="card-body">
+  <p class="card-text">{!! nl2br(e($slot)) !!}</p>
   <hr>
   <div class="row justify-content-end">
     <div class="col-auto">
@@ -24,4 +25,5 @@
       </div>
     @endif
   </div>
+</div>
 </div>
