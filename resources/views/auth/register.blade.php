@@ -29,7 +29,7 @@
                             <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('user.username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" aria-describedby="usernameHelp" placeholder="{{ __('user.username_hint')}}" required autofocus>
+                                <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" aria-describedby="usernameHelp" placeholder="{{ __('user.username_hint')}}" required>
                                 <small id="usernameHelp" class="form-text text-muted">{{ __('user.username_expl')}}</small>
                                 @if ($errors->has('username'))
                                     <span class="invalid-feedback" role="alert">
