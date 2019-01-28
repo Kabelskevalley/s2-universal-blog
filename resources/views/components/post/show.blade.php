@@ -4,14 +4,14 @@
   <hr>
   <div class="row justify-content-end">
     <div class="col-auto">
-      <a href="{{ action('PostController@show', ['id' => $post->id])}}">anzeigen</a>
+      <a href="{{ action('PostController@show', ['id' => $post->id])}}">{{ __('post.view')}}</a>
     </div>
   </div>
   <div class="row">
       <span class="col-md-3 col-sm-12">
         <a href="{{ action('UserController@show', ['id' => $post->user->id])}}">{{ $post->user->name }}</a>
       </span>
-      <span class="col text-info">Letzte Änderung am: <i>{{ $post->updated_at }}</i></span>
+      <span class="col text-info">{{ __('post.last_change')}} <i>{{ $post->updated_at }}</i></span>
     @if (Auth::id() == $post->user->id)
       <div class="col-auto">
         <form method="POST" action="{{ action('PostController@destroy', ['id' => $post->id]) }}">
