@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Post;
+use Lang;
 
 class PostController extends Controller
 {
@@ -73,7 +74,7 @@ class PostController extends Controller
 
         $post->update(request(['body']));
 
-        return back()->with('status', 'Post aktualisiert!');
+        return back()->with('status', Lang::get('post.updated_success'));
     }
 
     /**
@@ -87,6 +88,6 @@ class PostController extends Controller
         abort_unless(auth()->user()->owns($post), 403);
         $post->delete();
 
-        return back();
+        return redirect('home');
     }
 }

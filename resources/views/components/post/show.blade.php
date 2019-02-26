@@ -18,8 +18,8 @@
           @method('DELETE')
           @csrf
           <div class="btn-group" role="group">
-            <a href="{{ action('PostController@edit', ['id' => $post->id]) }}" class="btn btn-outline-success btn-space" aria-label="Post bearbeiten">bearbeiten</a>
-            <button type="submit" class="btn btn-outline-danger btn-space" aria-label="Post löschen">löschen</button>
+            <a href="{{ action('PostController@edit', ['id' => $post->id]) }}" class="btn btn-outline-success btn-space" aria-label="{{ __('post.edit_post')}}">{{ __('post.edit')}}</a>
+            <button type="submit" class="btn btn-outline-danger btn-space" aria-label="{{ __('post.delete_post')}}">{{ __('post.delete')}}</button>
           </div>
         </form>
       </div>
