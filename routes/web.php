@@ -12,11 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $posts = \App\Post::orderBy('updated_at', 'desc')->get();
+    return view('main', compact('posts'));
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('posts', 'PostController');
+Route::get('posts/{post}', 'PostController@show');
+Route::get('posts/{post}/edit', 'PostController@edit');
+Route::post('posts', 'PostController@store');
+Route::patch('posts/{post}', 'PostController@update');
+Route::delete('posts/{post}', 'PostController@destroy');
+
+Route::get('users/{user}', 'UserController@show');
+
+//Route::get('user/{id}', 'PostController@index');

@@ -5,28 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Post;
+use Lang;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-      $posts = Post::orderBy('updated_at', 'desc')->get();
-      return view('posts.index', compact('posts'));
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function __construct()
     {
-      return view('posts.create');
+        $this->middleware('auth')->except(['show']);
     }
 
     /**
@@ -43,10 +29,10 @@ class PostController extends Controller
 
       Post::create([
         'body' =>  request('body'),
-        'user_id' => \App\User::first()->id
+        'user_id' => auth()->id()
       ]);
 
-      return redirect('posts');
+      return redirect('/');
     }
 
     /**
@@ -68,6 +54,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        abort_unless(auth()->user()->owns($post), 403);
         return view('posts.edit', compact('post'));
     }
 
@@ -80,13 +67,14 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        abort_unless(auth()->user()->owns($post), 403);
         request()->validate([
           'body' => 'required'
         ]);
 
         $post->update(request(['body']));
 
-        return redirect('posts');
+        return back()->with('status', Lang::get('post.updated_success'));
     }
 
     /**
@@ -97,8 +85,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        abort_unless(auth()->user()->owns($post), 403);
         $post->delete();
 
-        return redirect('posts');
+        return redirect('home');
     }
 }
